@@ -4,9 +4,11 @@ var service = require('./service');
 var render = require('./render');
 var mapper = require('./mapper');
 
-var uiInput = document.querySelector('#ui-input');
-var uiSearch = document.querySelector('#ui-search');
-var uiForm = document.querySelector('#ui-form');
+
+var ui = require('./ui');
+var uiInput = ui.getInput();
+var uiSearch = ui.getSearch();
+var uiForm = ui.getForm();
 
 uiForm.addEventListener('submit', function (event) {
     event.preventDefault();
@@ -22,9 +24,9 @@ function issueSearch (q) {
     .then(mapper)
     .then(function (items) {
         var tbody = render(items);
-        document.querySelector('tbody').outerHTML = tbody;
+        ui.getTbody().outerHTML = tbody;
 
         var thead = render.thead(items);
-        document.querySelector('thead').outerHTML = thead;
+        ui.getThead().outerHTML = thead;
     });
 }
