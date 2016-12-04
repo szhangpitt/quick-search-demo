@@ -7,15 +7,11 @@
 //     '</tr>'
 // '</tbody>'
 
-function td (text) {
-    return '<td>' + text + '</td>';
-}
-
 function tr (item) {
     var tds = Object.keys(item).reduce(function (html, key) {
         var htmlNow = html;
 
-        var tdHtml = td(item[key]);
+        var tdHtml = wrapTd(item[key]);
 
         htmlNow = htmlNow + tdHtml;
 
@@ -33,4 +29,21 @@ function tbody (items) {
     '</tbody>';
 }
 
+function thead (items) {
+    return wrap('thead',
+        Object.keys(items[0]).map(wrapTd)
+    );
+}
+
+function wrap (tag, content) {
+    return '<' + tag + '>' +
+        content +
+    '</' + tag + '>';
+}
+
+function wrapTd (content) {
+    return wrap('td', content);
+}
+
 module.exports = tbody;
+module.exports.thead = thead;

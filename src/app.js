@@ -7,14 +7,14 @@ var $target = $('#target');
 
 // $target.html('something');
 
-// service.search('zhang')
-// .then(function (res) {
-//     console.log('res', res);
-// });
+service.search('zhang')
+.then(function (res) {
+    return res.data.items;
+})
+.then(function (items) {
+    var tbody = render(items);
+    $target.find('tbody').replaceWith(tbody);
 
-console.log(
-    render([
-        { name: 'Shaopneg', url: 'sz' },
-        { name: 'Jaret',    url: 'jf' },
-        { name: 'Sunil',    url: 'sr' },
-        ]))
+    var thead = render.thead(items);
+    $target.find('thead').replaceWith(thead);
+});
