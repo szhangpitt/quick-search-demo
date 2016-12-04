@@ -32,7 +32,6 @@
   "homepage": "https://github.com/szhangpitt/quick-search-demo#readme",
   "dependencies": {
     "axios": "^0.15.3",
-    "jquery": "^3.1.1",
     "lodash.bind": "^4.2.1",
     "lodash.pick": "^4.4.0"
   },

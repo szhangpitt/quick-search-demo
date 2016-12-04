@@ -31,7 +31,7 @@ function tbody (items) {
 
 function thead (items) {
     return wrap('thead',
-        Object.keys(items[0]).map(wrapTd)
+        Object.keys(items[0]).map(wrapTd).join('')
     );
 }
 
