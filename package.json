@@ -4,7 +4,7 @@
   "description": "quick search demo",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha test",
     "clean": "rm -rf dist && mkdir -p dist",
     "html": "cp src/index.html dist/",
     "html-watch": "watch 'cp src/index.html dist/' src",
