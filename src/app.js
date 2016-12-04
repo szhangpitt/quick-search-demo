@@ -7,7 +7,6 @@ var mapper = require('./mapper');
 
 var ui = require('./ui');
 var uiInput = ui.getInput();
-var uiSearch = ui.getSearch();
 var uiForm = ui.getForm();
 
 uiForm.addEventListener('submit', function (event) {
