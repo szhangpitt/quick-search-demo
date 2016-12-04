@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf dist && mkdir -p dist",
     "html": "cp src/index.html dist/",
     "html-watch": "watch 'cp src/index.html dist/' src",
     "js": "browserify src/app.js -o dist/bundle.js",
     "js-watch": "watchify src/app.js -o dist/bundle.js",
-    "dev": "concurrently 'npm run live' 'npm run html-watch && npm run js-watch'",
-    "build": "npm run html && npm run js",
+    "dev": "npm run clean && concurrently 'npm run html-watch'  'npm run js-watch' 'npm run live'",
+    "build": "npm run clean && npm run html && npm run js",
     "live": "live-server dist",
     "lint": "eslint src"
   },
