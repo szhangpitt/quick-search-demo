@@ -24,9 +24,9 @@ function issueSearch (q) {
     .then(mapper)
     .then(function (items) {
         var tbody = render(items);
-        ui.getTbody().outerHTML = tbody;
+        ui.setTbody(tbody);
 
         var thead = render.thead(items);
-        ui.getThead().outerHTML = thead;
+        ui.setThead(thead);
     });
 }
