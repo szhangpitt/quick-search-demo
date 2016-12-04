@@ -6,9 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "html": "cp src/index.html dist/",
+    "html-watch": "watch 'cp src/index.html dist/' src",
     "js": "browserify src/app.js -o dist/bundle.js",
     "js-watch": "watchify src/app.js -o dist/bundle.js",
-    "dev": "concurrently 'npm run live' 'npm run html && npm run js-watch'",
+    "dev": "concurrently 'npm run live' 'npm run html-watch && npm run js-watch'",
     "build": "npm run html && npm run js",
     "live": "live-server dist",
     "lint": "eslint src"
@@ -38,6 +39,7 @@
     "eslint": "^3.11.1",
     "eslint-config-eslint": "^3.0.0",
     "live-server": "^1.1.0",
+    "watch": "^1.0.1",
     "watchify": "^3.7.0"
   }
 }
