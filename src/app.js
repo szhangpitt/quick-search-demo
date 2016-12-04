@@ -1,7 +1,7 @@
-'use strict';
+// 'use strict';
 
-var $ = require('jquery');
+// var $ = require('jquery');
 
-var $target = $('#target');
+// var $target = $('#target');
 
-$target.html('something');
+// $target.html('something');

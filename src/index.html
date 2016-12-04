@@ -5,7 +5,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
-    <div id="target"></div>
+    <div class="container">
+        <form class="form">
+            <div class="form-group">
+                <input type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary">Search</button>
+            </div>
+        </form>
+
+        <div id="target">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <td>Name</td>
+                        <td>Age</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Shaopeng</td>
+                        <td>30</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 
     <script src="./bundle.js"></script>
 </body>
